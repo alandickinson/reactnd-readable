@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'National';
+  src: url('./assets/fonts/National2Web-Regular.eot'); /* IE9 Compat Modes */
+  src: url('./assets/fonts/National2Web-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./assets/fonts/National2Web-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./assets/fonts/National2Web-Regular.woff') format('woff'); /* Pretty Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'National Narrow';
+  src: url('./assets/fonts/National2NarrowWeb-Medium.eot'); /* IE9 Compat Modes */
+  src: url('./assets/fonts/National2NarrowWeb-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./assets/fonts/National2NarrowWeb-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./assets/fonts/National2NarrowWeb-Medium.woff') format('woff'); /* Pretty Modern Browsers */
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'National', sans-serif;
+}

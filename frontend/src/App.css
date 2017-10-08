@@ -1,0 +1,382 @@
+
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: rgba(0,0,0,0.014);
+  font: 'National';
+}
+
+main {
+  /*max-width: 600px;*/
+  width: 600px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  margin-bottom: 18px;
+}
+
+header h2 {
+  font-size: 18px;
+  font-weight: 500;
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+
+.post-detail-info h2 {
+  margin-top: -8px;
+  margin-bottom: 0px;
+}
+
+button {
+  outline: none;
+}
+
+.page-content {
+  clear: both;
+  padding-top: 20px;
+}
+
+nav {
+  float: left;
+}
+.nav-actions {
+  padding-top: 3px;
+}
+.nav-actions a {
+  text-decoration: none
+}
+.nav-actions .sort button {
+  color: rgba(0,0,0,0.6);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  padding-bottom: 1px;
+  font-size:13px;
+}
+.nav-actions .sort button.selected {
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  color: green;
+}
+.nav-actions .sort button:hover {
+  color: green;
+}
+.nav-actions a.btn {
+  float: right;
+  background-color: green;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	display:inline-block;
+	color: white;
+	text-decoration:none;
+  padding: 8px 14px;
+  font-size:13px;
+}
+.nav-actions .sort {
+  float: right;
+  padding: 8px 14px;
+  display:inline-block;
+  font-size:13px;
+  margin: 0;
+}
+
+.nav-actions div.sort:before {
+  content: "";
+  background: url('./assets/sort_icon.svg') center left;
+  background-repeat: no-repeat;
+  background-size: 14px;
+  padding-right: 20px;
+  opacity: 0.6;
+}
+
+.comment-count:before {
+  content: "";
+  background: url('./assets/comment_icon.svg') center left;
+  background-repeat: no-repeat;
+  background-size: 13px;
+  padding-right: 16px;
+  opacity: 0.6;
+}
+
+.back-link {
+  font-size: 13px;
+  text-decoration: none;
+  color: green;
+  display: block;
+  margin: 30px 0;
+}
+
+a {
+  text-decoration: none;
+  color: green;
+}
+a:visited {
+  text-decoration: none;
+  color: green;
+}
+
+a.post-link {
+  color: #303030;
+}
+
+a.post-link .post-row-content {
+  opacity: 0.8;
+}
+
+a.post-link .post-row-content:hover {
+  opacity: 1;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+li.post-item {
+  padding-bottom: 6px;
+  border-radius: 3px;
+}
+
+li.post-item-hovered {
+  background-color: rgba(0,0,0,0.02);
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 10px 10px;
+}
+nav ul li:first-child {
+  padding-left: 0px;
+}
+nav a:hover {
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+}
+nav a.selected {
+  border-bottom: 2px solid green;
+}
+
+.list-empty {
+  padding: 20px 0 10px 0;
+  margin: 0 auto;
+  /*text-align: center;*/
+  color: rgba(0,0,0,0.4);
+  font-size: 13px;
+}
+
+ul.post-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-detail h2 {
+  margin-bottom: 0;
+}
+
+.post-content {
+  padding: 20px 0;
+}
+
+ul.post-list li {
+  margin: 14px 0;
+}
+
+.post-row, .post-detail, li.comment {
+  max-width: 600px;
+  width: 98%;
+  padding: 0;
+  clear: both;
+}
+.post-row p {
+  margin: 0;
+  padding: 0;
+}
+.vote {
+  height: 100%;
+  width: 30px;
+  font-size: 14px;
+  font-family: "National Narrow";
+  color: rgba(0,0,0,0.6);
+}
+.post-row button {
+  font-size: 10px;
+}
+.score {
+  width: 30px;
+  text-align: center;
+  /*margin-top: -1px;*/
+  margin-bottom: -6px;
+  cursor: default;
+  background-color: rgba(0,0,0,0.034)
+}
+.vote button {
+  content: "";
+  background: url('./assets/voteArrow.svg') center center, rgba(0,0,0,0.08);
+  background-repeat: no-repeat;
+  background-size: 10px 14px;
+  padding: 8px 15px;
+  border: none;
+  opacity: 0.5;
+  cursor: pointer;
+  border-radius: 3px 3px 0px 0px;
+  /*border: 1px solid rgba(0,0,0,0.1)*/
+}
+.vote button:hover {
+  opacity: 0.8;
+}
+.vote button:active {
+  opacity: 1;
+}
+.vote button:last-child {
+  transform: rotate(180deg);
+}
+
+.post-row-info, .post-detail-info, .comment-content {
+  padding: 10px 10px 20px 0px;
+  max-width: 500px;
+  width: 100%;
+  float: right;
+  text-align: left;
+  /*border-bottom: 1px solid rgba(0,0,0,0.1)*/
+}
+.comment-content {
+  padding: 0px 10px 20px 10px;
+}
+.comment-content p {
+  margin: 8px 0px 2px 0px;
+}
+.post-row-content {
+  text-align: left;
+  width: 100%;
+}
+.post-comments h4 {
+  margin-left: 50px;
+  font-family: 'National Narrow';
+  margin-bottom: 10px;
+}
+.comments-empty {
+  margin-left: 50px;
+}
+.meta {
+  font-size: 13px;
+  color: rgba(0,0,0,0.6);
+  padding-top: 5px;
+}
+.meta button {
+  background: none;
+  border: none;
+  font-size: 13px;
+  padding: 0;
+  color: green;
+  cursor: pointer;
+}
+
+.post-comments {
+  padding-top: 0px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  clear: both;
+}
+
+.comment-form {
+  clear: both;
+  margin-top: 30px;
+  margin-left: 50px;
+  margin-bottom: 30px;
+}
+label {
+  font-family: 'National Narrow';
+  font-size: 11px;
+  text-transform: uppercase;
+  display: block;
+}
+input, textarea, select {
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 8px;
+  margin-top: 5px;
+}
+textarea {
+  resize: vertical;
+}
+select {
+  height: 30px;
+  background-color: white;
+}
+.comment-form h4, .post-form h4 {
+  font-family: 'National Narrow';
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+.comment-form button, .post-form button, .edit-post-form button.submit, .edit-comment-form button.submit {
+  border: none;
+  background-color: green;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	display:inline-block;
+	color: white;
+	text-decoration:none;
+  padding: 8px 14px;
+  font-size:13px;
+  cursor: pointer;
+}
+.edit-post-meta {
+  display: inline-block;
+  padding-left: 20px;
+}
+.form-controls {
+  padding: 20px 0 10px 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.modal {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  border-radius: 3px;
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,.24), 0 3px 12px 0 rgba(0,0,0,.12);
+  width: 500px;
+}
