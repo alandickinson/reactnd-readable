@@ -9,6 +9,7 @@ import CommentsList from './CommentsList';
 import CommentForm from './CommentForm';
 import Modal from 'react-modal';
 import EditPostForm from './EditPostForm';
+import NotFound from './NotFound';
 
 class PostDetail extends Component {
   state = {
@@ -31,6 +32,9 @@ class PostDetail extends Component {
       this.props.getComments(postId)
     }
   }
+  componentWillReceiveProps(nextProps) {
+    console.log("getting new props", this.props, nextProps)
+  }
   submitComment = (comment) => {
     const postId = this.props.match.params.id
     if (comment.body && comment.author) {
@@ -48,8 +52,9 @@ class PostDetail extends Component {
   render() {
     const postModalOpen = this.state.postModalOpen
     const post = this.props.post
-    return (
-        <div className="post-detail">
+    return !post || post.id != this.props.urlParam || post.deleted === true
+      ? <NotFound/>
+      : <div className="post-detail">
           <Modal
             className='modal'
             overlayClassName='overlay'
@@ -82,14 +87,14 @@ class PostDetail extends Component {
           </div>
           <CommentForm onSubmit={this.submitComment}/>
         </div>
-    )
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps (state, ownProps) {
   return {
     post: state.posts.singlepost,
-    comments: state.comments.comments
+    comments: state.comments.comments,
+    urlParam: ownProps.match.params.id
   }
 }
 

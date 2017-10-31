@@ -47,11 +47,19 @@ function posts (state = initialPostState, action) {
         lastUpdated: action.receivedAt
       }
     case REQUEST_SINGLE_POST:
-      return state
+      return {
+        ...state,
+        singlepost: {
+          isFetching: true
+        }
+      }
     case RECEIVE_SINGLE_POST:
       return {
         ...state,
-        singlepost: action.post
+        singlepost: {
+          ...action.post,
+          isFetching: false
+        }
       }
     case SORT_BY_POPULAR:
       return {

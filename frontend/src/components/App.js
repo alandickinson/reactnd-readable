@@ -38,8 +38,8 @@ class App extends Component {
           <Route exact path="/post" render={() => (
             <NewPost />
           )}/>
-          <Route exact path="/post/:id" render={() => (
-            <PostDetail />
+          <Route exact path="/post/:id" render={(props) => (
+            <PostDetail postId={props.id}/>
           )}/>
         </main>
       </div>
