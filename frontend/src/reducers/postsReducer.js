@@ -31,7 +31,13 @@ function posts (state = initialPostState, action) {
     case UPDATE_POST:
       return {
         ...state,
-        allPosts: state.allPosts.concat(action.payload),
+        allPosts: state.allPosts.map(post => {
+          if(post.id === action.payload.id) {
+            return action.payload
+          } else {
+            return post
+          }
+        }),
         singlepost: (state.singlepost.id === action.payload.id) ? action.payload : state.singlepost
       }
     case REQUEST_POSTS:
