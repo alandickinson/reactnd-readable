@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import RelativeTime from 'react-relative-time';
-import { votePost } from '../actions/posts'
+import { votePost, deletePost } from '../actions/posts'
 import { getCommentCount } from '../actions/comments'
 
 class PostListItem extends Component {
@@ -33,7 +33,10 @@ class PostListItem extends Component {
               <div className="post-row-content">
                 <p>{post.title}</p>
                 <div className="meta">
-                  by {post.author} in {post.category} <RelativeTime value={post.timestamp}/>. &nbsp; <span className="comment-count">{count}</span>
+                  by {post.author} in {post.category} <RelativeTime value={post.timestamp}/>.
+                  &nbsp; <span className="comment-count">{count}</span>
+                  &nbsp;&nbsp; <Link to={`/post/${post.id}/edit`}>edit</Link>
+                  &nbsp; <button onClick={() => this.props.removePost(post.id, this.props.history)}>delete</button>
                 </div>
               </div>
             </div>
@@ -58,7 +61,8 @@ function mapStateToProps (state) {
 function mapDispatchToProps (dispatch) {
   return {
     vote: (postId, vote) => dispatch(votePost(postId, vote)),
-    countComments: (postId) => dispatch(getCommentCount(postId))
+    countComments: (postId) => dispatch(getCommentCount(postId)),
+    removePost: (postId, history) => dispatch(deletePost(postId, history))
   }
 }
 

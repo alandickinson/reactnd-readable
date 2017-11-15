@@ -285,13 +285,24 @@ ul.post-list li {
   color: rgba(0,0,0,0.6);
   padding-top: 5px;
 }
-.meta button {
+.meta button, .meta a {
   background: none;
   border: none;
   font-size: 13px;
   padding: 0;
-  color: green;
+  color: rgba(0,0,0,0.6);
   cursor: pointer;
+}
+.meta button:hover, .meta a:hover {
+  color: green;
+  border-bottom: 1px solid green;
+}
+button {
+  font-family: 'National', sans-serif;
+}
+
+.sort button, .meta button {
+  border-radius: 0;
 }
 
 .post-comments {

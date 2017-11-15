@@ -41,6 +41,9 @@ class App extends Component {
           <Route exact path="/post/:id" render={(props) => (
             <PostDetail postId={props.id}/>
           )}/>
+          <Route exact path="/post/:id/edit" render={(props) => (
+            <PostDetail postId={props.id}/>
+          )}/>
         </main>
       </div>
     );

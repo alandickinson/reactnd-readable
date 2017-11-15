@@ -15,25 +15,34 @@ class PostDetail extends Component {
   state = {
     postModalOpen: false
   }
-  openPostModal = () => {
+  openPostModal = (silent) => {
     this.setState(() => ({
       postModalOpen: true
     }))
+    if (!silent) {
+      const postId = this.props.match.params.id
+      this.props.history.push(`/post/${postId}/edit`)
+    }
   }
-  closePostModal = () => {
+  closePostModal = (silent) => {
     this.setState(() => ({
       postModalOpen: false
     }))
+    if (!silent) {
+      const postId = this.props.match.params.id
+      this.props.history.push(`/post/${postId}`)
+    }
   }
   componentWillMount() {
     const postId = this.props.match.params.id
+    const path = this.props.match.path
     if(postId) {
       this.props.getPost(postId)
       this.props.getComments(postId)
     }
-  }
-  componentWillReceiveProps(nextProps) {
-    console.log("getting new props", this.props, nextProps)
+    if(path === '/post/:id/edit') {
+      this.openPostModal(true)
+    }
   }
   submitComment = (comment) => {
     const postId = this.props.match.params.id
